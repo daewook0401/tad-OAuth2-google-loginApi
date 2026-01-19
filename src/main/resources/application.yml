@@ -2,7 +2,7 @@ spring:
   application:
     name: auth-service
   config:
-    import: optional:classpath:application-private.yml
+    import: optional:file:/home/daewook/server/tad/private-yml/application-auth.yml
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://127.0.0.1:5001/tad_db?currentSchema=auth&ApplicationName=tad-auth
@@ -26,16 +26,6 @@ server:
   port: 9000
   servlet:
     context-path: /auth
-
-app:
-  oauth2:
-    google:
-      client-id: ${GOOGLE_CLIENT_ID:}
-  jwt:
-    issuer: ${JWT_ISSUER:tad-auth}
-    secret-base64: ${JWT_SECRET_BASE64:}
-    access-minutes: ${JWT_ACCESS_MINUTES:15}
-    refresh-days: ${JWT_REFRESH_DAYS:14}
 
 logging:
   level:
